@@ -1,6 +1,5 @@
-#Close minecraft and the technic launcher if either are still open
-$javaProcesses = Get-Process javaw
 #First we kill the minecraft process
+$javaProcesses = Get-Process javaw
 Foreach ($i in $javaProcesses) {
   if (($i.MainWindowTitle.ToLower() -like "*minecraft*") -and (-Not ($i.MainWindowTitle.ToLower() -like "*server*"))) {
     Stop-Process $i.Id
