@@ -1,5 +1,4 @@
 #Close minecraft and the technic launcher if either are still open
-# -or ($i.MainWindowTitle.ToLower() -like "*minecraft*")) -and ($i.MainWindowTitle.ToLower() -like "*server*"))
 $javaProcesses = Get-Process javaw
 #First we kill the minecraft process
 Foreach ($i in $javaProcesses) {
@@ -24,5 +23,9 @@ Foreach ($i in $javaProcesses) {
 #Foreach ($i in $adapters) {
 #  $i.Disable()
 #}
+
+#Get the username
+[System.Reflection.Assembly]::LoadWithPartialName('Microsoft.VisualBasic') | Out-Null
+$username = [Microsoft.VisualBasic.Interaction]::InputBox("Enter a username", "Username", "$env:computername")
 
 #Now edit the user.json file to change our name based on user input
