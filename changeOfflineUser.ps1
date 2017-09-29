@@ -29,3 +29,11 @@ Foreach ($i in $javaProcesses) {
 $username = [Microsoft.VisualBasic.Interaction]::InputBox("Enter a username", "Username", "$env:computername")
 
 #Now edit the user.json file to change our name based on user input
+
+#Start Technic launcher
+#
+
+#Renable network adapters
+#Foreach ($i in $adapters) {
+#  $i.Enable()
+#}
