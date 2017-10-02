@@ -18,21 +18,25 @@ Foreach ($i in $javaProcesses) {
 }
 
 #Loop through the network adapters and disable them (also store them so we can renable them later)
-#$adapters = get-wmiobject win32_networkadapter -filter "netconnectionstatus = 2"
-#Foreach ($i in $adapters) {
-#  $i.Disable()
-#}
+$adapters = get-wmiobject win32_networkadapter -filter "netconnectionstatus = 2"
+Foreach ($i in $adapters) {
+  $i.Disable()
+}
 
 #Get the username
 [System.Reflection.Assembly]::LoadWithPartialName('Microsoft.VisualBasic') | Out-Null
 $username = [Microsoft.VisualBasic.Interaction]::InputBox("Enter a username", "Username", "$env:computername")
 
 #Now edit the user.json file to change our name based on user input
+$path = $env:APPDATA + "\.technic\users.json"
+(Get-Content $path) -replace '"displayName":.*', ('"displayName": "' + $username + '",') | Set-Content $path
+(Get-Content $path) -replace '"name":.*', ('"name": "' + $username + '",') | Set-Content $path
 
 #Start Technic launcher
-#
+$path = $env:APPDATA + "\.technic\temp.exe"
+Start-Process $path
 
 #Renable network adapters
-#Foreach ($i in $adapters) {
-#  $i.Enable()
-#}
+Foreach ($i in $adapters) {
+  $i.Enable()
+}
