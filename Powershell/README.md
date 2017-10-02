@@ -1,5 +1,5 @@
 <h2>changeOfflineUser.ps1</h2>
-<p>This is a simple program that automates changing your username for offline play when using the technic launcher</p>
+<p>This program automates changing your username for offline play when using the technic launcher</p>
 <p>If you want to use this as an exectuable on your desktop use the following instructions:</p>
 <ol>
   <li>Right click and "send to desktop" to create a shortcut of it.</li>
