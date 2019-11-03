@@ -7,3 +7,5 @@
   <li>Finally go into advanced and set run as administrator.</li>
   <li>Don't forget to apply the changes!</li>
 </ol>
+<h2>db-update.ps1</h2>
+<p>This script automatically updates a SQL database with the latest change scripts</p>
