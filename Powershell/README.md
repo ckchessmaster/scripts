@@ -9,3 +9,5 @@
 </ol>
 <h2>db-update.ps1</h2>
 <p>This script automatically updates a SQL database with the latest change scripts</p>
+<h2>toolchain.ps1</h2>
+<p>This script automatically restarts apps and runs db scripts.</p>
